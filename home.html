@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
-    <title>Ignis</title>
+    <title>Ignis Dasboard</title>
     <meta charset="utf-8">
     <link rel="sortcut icon" href="ico.png" type="image/x-icon"/>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+    <style>
+      #map {position: absolute; top: 0; bottom: 0; left: 0; right: 0; width: 100%; height: 800px;}
+    </style>
   </head>
   <body>
       <nav class="navbar navbar-light bg-light">
@@ -17,14 +23,46 @@
   <div class="col-sm-2 ml-4 mt-4"><button type="button" class="btn btn-danger btn-lg btn-block"> Focos <span class="badge badge-light">9</span></button>
     <button type="button" class="btn btn-danger btn-lg btn-block">Incendios Contidos </button>
   </div>
-  <div class="col-sm-9 mr-4"><iframe
-    width="600"
-    height="450"
-    frameborder="0" style="border:0"
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7mQKkAThQUG3kXF4hORabj8irlfY3OG8&callback=initMap" allowfullscreen>
-  </iframe></div>
+  <div class="col-sm-9 mr-4">
+    <div id= "map"></div>
   </div>
+<script>
+  var map = L.map('map').setView([-15.5989, -56.0949], 14);
+  L.tileLayer('https://api.maptiler.com/maps/hybrid/{z}/{x}/{y}.jpg?key=kdWPIS1d6kfpw3NHzYVE',).addTo(map);
   
-    
+
+  var circle = L.circle([-15.5989, -56.0249],
+  {
+    color: 'red',
+    fillColor: '#f03',
+    fillOpacity: 0.5,
+    radius: 50
+  }).addTo(map);
+
+  var circle1 = L.circle([-15.5989, -56.0349],
+  {
+    color: 'red',
+    fillColor: '#f03',
+    fillOpacity: 0.5,
+    radius: 100
+  }).addTo(map);
+
+  var circle2 = L.circle([-15.5929, -56.1349],
+  {
+    color: 'red',
+    fillColor: '#f03',
+    fillOpacity: 0.5,
+    radius: 100
+  }).addTo(map);
+
+  var circle3 = L.circle([-15.5979, -56.1049],
+  {
+    color: 'red',
+    fillColor: '#f03',
+    fillOpacity: 0.5,
+    radius: 100
+  }).addTo(map);
+
+</script>
   </body>
 </html>
