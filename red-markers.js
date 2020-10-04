@@ -1,5 +1,5 @@
 var map = L.map('map').setView([-15.5989, -56.0949], 14);
-L.tileLayer('https://api.maptiler.com/maps/hybrid/{z}/{x}/{y}.jpg?key=kdWPIS1d6kfpw3NHzYVE',).addTo(map);
+L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=kdWPIS1d6kfpw3NHzYVE',).addTo(map);
 
 var circle = L.circle([-15.5989, -56.0249],
   {
