@@ -7,62 +7,32 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://kit.fontawesome.com/1bfdaabbdd.js" crossorigin="anonymous"></script>
 
     <style>
       #map {position: absolute; top: 0; bottom: 0; left: 0; right: 0; width: 100%; height: 800px;}
     </style>
   </head>
   <body>
-      <nav class="navbar navbar-light bg-light">
+      <nav class="navbar navbar-light" style="background-color: #F29F05;">
         <a class="navbar-brand" href="#">
-          <img src="icone.png" width="35" height="35" class="d-inline-block align-top" alt="Home">
+        <img src="icone.png" width="35" height="35" class="d-inline-block align-top" alt="Home">
     Ignis Dashboard
   </a>
 </nav>
-<div class="row">
-  <div class="col-sm-2 ml-4 mt-4"><button type="button" class="btn btn-danger btn-lg btn-block"> Focos <span class="badge badge-light">9</span></button>
-    <button type="button" class="btn btn-danger btn-lg btn-block">Incendios Contidos </button>
+
+<div class="row no-gutters">
+  <div class="col-2 mt-4 ml-2 mr-2">
+    <button type="button" class="btn btn-primary btn-lg btn-block" style="background-color: #18298C;" onclick="alert('TA PEGANDO FOGO BIXO !!!')" ><i class="fas fa-fire"></i> Focos <span class="badge badge-light">9</span></button>
+    <button type="button" class="btn btn-primary btn-lg btn-block" style="background-color: #18298C;"><i class="fas fa-video"></i> Câmeras </button>
+    <button type="button" class="btn btn-primary btn-lg btn-block" style="background-color: #18298C;" onclick="alternaExibicao();"><i class="fas fa-fire-extinguisher"></i> Incêndios Contidos </button>
+    
   </div>
-  <div class="col-sm-9 mr-4">
-    <div id= "map"></div>
+  <div class="col mt-4 mr-2">
+    <div id= "map" class="rounded"></div>
   </div>
-<script>
-  var map = L.map('map').setView([-15.5989, -56.0949], 14);
-  L.tileLayer('https://api.maptiler.com/maps/hybrid/{z}/{x}/{y}.jpg?key=kdWPIS1d6kfpw3NHzYVE',).addTo(map);
-  
 
-  var circle = L.circle([-15.5989, -56.0249],
-  {
-    color: 'red',
-    fillColor: '#f03',
-    fillOpacity: 0.5,
-    radius: 50
-  }).addTo(map);
-
-  var circle1 = L.circle([-15.5989, -56.0349],
-  {
-    color: 'red',
-    fillColor: '#f03',
-    fillOpacity: 0.5,
-    radius: 100
-  }).addTo(map);
-
-  var circle2 = L.circle([-15.5929, -56.1349],
-  {
-    color: 'red',
-    fillColor: '#f03',
-    fillOpacity: 0.5,
-    radius: 100
-  }).addTo(map);
-
-  var circle3 = L.circle([-15.5979, -56.1049],
-  {
-    color: 'red',
-    fillColor: '#f03',
-    fillOpacity: 0.5,
-    radius: 100
-  }).addTo(map);
-
-</script>
+<script src="black-markers.js"></script>
+<script src="red-markers.js"></script>
   </body>
 </html>
